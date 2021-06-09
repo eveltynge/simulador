@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 5px;
+}
+.container {
+    display: grid;
+    grid-template:
+    "nav" 100px
+    "main" auto
+    "footer" 70px;
+}
+.nav {
+    grid-area: nav;    
+    display: flex;
+    align-items: baseline;
+}
+.main {
+    grid-area: main;
+    background-color: palegreen;
+    padding: 10px;
+}
+footer {
+    grid-area: footer;
+}
+.calculator {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.calculator div {
+    text-align: left;
+}
+li {
+    list-style-type: none;
+}
