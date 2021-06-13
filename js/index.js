@@ -27,17 +27,17 @@ class Prestamo {
 const solicitudes = [];
 let cantidad = 3;
 while (solicitudes.length < cantidad) {
-    let nombre = prompt ("Por favor ingrese su nombre");
+    let nombre = "";
     while (nombre == ""){
-        alert ("Por favor ingrese su nombre para continuar");
+        nombre = prompt ("Por favor ingrese su nombre");
     }
     alert ("Hola " + nombre + ". " + "Bienvenido a tu simulador de préstamos");
     solicitudes.push(nombre);
-    monto = 0;
+    let monto = 0;
     do {
         monto = (parseInt(prompt("Ingrese un monto mayor a 0 para simular su préstamo")));
     } while (monto <= 0);
-    meses = 0;
+    let meses = 0;
     do {
         meses = (parseInt(prompt("Seleccione entre 12, 24 o 36 meses")));
     } while ((meses != 12) && (meses != 24) && (meses != 36));
