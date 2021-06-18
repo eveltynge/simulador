@@ -1,7 +1,11 @@
-class Prestamo {
-    constructor (monto, meses) {
-        this.monto = monto;
-        this.meses = meses;
+const solicitantes = [];
+let condicion = true;
+
+class Solicitud {
+    constructor(nombre, montos, meses){
+        this.nombre=nombre,
+        this.montos=montos,
+        this.meses=meses;
         switch (this.meses) {
             case 12:
                 this.interes = 0.20;
@@ -15,7 +19,7 @@ class Prestamo {
         }
     }
     montoFinal(){
-        this.montoTotal = this.monto + this.monto*this.interes;
+        this.montoTotal = this.montos + this.montos*this.interes;
         return this.montoTotal;
     }
     cuotaFinal(){
@@ -23,27 +27,31 @@ class Prestamo {
         return this.cuota;
     }
 }
-
-/* const solicitudes = [];
-let cantidad = 3;
-while (solicitudes.length < cantidad) {
+do {
     let nombre = "";
     while (nombre == ""){
         nombre = prompt ("Por favor ingrese su nombre");
     }
     alert ("Hola " + nombre + ". " + "Bienvenido a tu simulador de préstamos");
-    solicitudes.push(nombre);
-    let monto = 0;
+
+    let montos = 0;
     do {
-        monto = (parseInt(prompt("Ingrese un monto mayor a 0 para simular su préstamo")));
-    } while (monto <= 0);
+        montos = (parseInt(prompt("Ingrese un monto mayor a 0 para simular su préstamo")));
+    } while (montos <= 0);
+
     let meses = 0;
     do {
         meses = (parseInt(prompt("Seleccione entre 12, 24 o 36 meses")));
     } while ((meses != 12) && (meses != 24) && (meses != 36));
 
-    const prestamo1 = new Prestamo (monto, meses);
-    alert ("Ud ingresó " + prestamo1.monto + " en " + prestamo1.meses + " meses");
-    alert ("Ud abonará "+ prestamo1.montoFinal() + " en cuotas de " + prestamo1.cuotaFinal() + " con un interes de " + prestamo1.interes);
-}
-console.log(solicitudes); */
+    let SolicitudIngresada = new Solicitud(nombre, montos, meses);
+
+    solicitantes.push(SolicitudIngresada)
+
+    alert ("Ud ingresó " + SolicitudIngresada.montos + " en " + SolicitudIngresada.meses + " meses");
+    alert ("Ud abonará "+ SolicitudIngresada.montoFinal() + " en cuotas de " + SolicitudIngresada.cuotaFinal() + " con un interes de " + SolicitudIngresada.interes);
+
+    condicion = confirm("Quiere simular un nuevo préstamo?")
+} while (condicion != false);
+
+console.log(solicitantes);
