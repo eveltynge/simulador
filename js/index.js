@@ -24,7 +24,7 @@ class Prestamo {
     }
 }
 
-const solicitudes = [];
+/* const solicitudes = [];
 let cantidad = 3;
 while (solicitudes.length < cantidad) {
     let nombre = "";
@@ -46,7 +46,4 @@ while (solicitudes.length < cantidad) {
     alert ("Ud ingresó " + prestamo1.monto + " en " + prestamo1.meses + " meses");
     alert ("Ud abonará "+ prestamo1.montoFinal() + " en cuotas de " + prestamo1.cuotaFinal() + " con un interes de " + prestamo1.interes);
 }
-console.log(solicitudes);
-
-
-
+console.log(solicitudes); */
