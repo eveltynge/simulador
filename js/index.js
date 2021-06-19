@@ -52,6 +52,23 @@ do {
     alert ("Ud abonará "+ SolicitudIngresada.montoFinal() + " en cuotas de " + SolicitudIngresada.cuotaFinal() + " con un interes de " + SolicitudIngresada.interes);
 
     condicion = confirm("Quiere simular un nuevo préstamo?")
+
 } while (condicion != false);
 
 console.log(solicitantes);
+
+const section = document.getElementsByClassName('contenedor');
+
+for (let element of solicitantes){
+
+    let div = document.createElement('div');
+    div.className = 'usuarios'
+    div.innerHTML = `
+    <h1>${element.nombre}</h1>
+    <p>${element.montos}</p>
+    <p>${element.meses}</p>`
+
+    section.appendChild(div);
+   
+}
+console.log(section);
