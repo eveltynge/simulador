@@ -68,7 +68,7 @@ for (let element of solicitantes){
     <p>${element.montos}</p>
     <p>${element.meses}</p>`
 
-    section.appendChild(div);
+    section[0].appendChild(div);
    
 }
 console.log(section);
