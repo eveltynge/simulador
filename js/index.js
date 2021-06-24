@@ -27,7 +27,7 @@ class Solicitud {
         return this.cuota;
     }
 }
-do {
+/* do {
     let nombre = "";
     while (nombre == ""){
         nombre = prompt ("Por favor ingrese su nombre");
@@ -55,7 +55,7 @@ do {
 
 } while (condicion != false);
 
-console.log(solicitantes);
+console.log(solicitantes); */
 
 const section = document.getElementsByClassName('contenedor');
 
@@ -64,11 +64,29 @@ for (let element of solicitantes){
     let div = document.createElement('div');
     div.className = 'usuarios'
     div.innerHTML = `
-    <h1>${element.nombre}</h1>
-    <p>${element.montos}</p>
-    <p>${element.meses}</p>`
+    <p>Usuario: ${element.nombre}</p>
+    <p>Monto solicitado: ${element.montos}</p>
+    <p>Cantidad de cuotas: ${element.meses}</p>
+    <p>Monto a pagar: ${element.montoTotal}</p>
+    <p>Monto de la cuota: ${element.cuota}</p>`
 
     section[0].appendChild(div);
    
 }
 console.log(section);
+
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", Simular);
+
+function Simular(e){
+    e.preventDefault();
+    console.log(document.getElementById("mntSlc").value);
+    if(document.getElementById("opciona").checked == true) {   
+        console.log("opciona");   
+    } else if (document.getElementById("opcionb").checked == true){  
+        console.log("opcionb"); 
+    } else if (document.getElementById("opcionc").checked == true) 
+        console.log("opcionc");
+} 
+
+

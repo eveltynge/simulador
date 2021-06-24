@@ -8,7 +8,6 @@ html {
 }
 body {
     min-height: 100%;
-    margin: 5px;
 }
 .container {
     display: grid;
@@ -26,6 +25,7 @@ body {
     grid-area: main;
     background-color: palegreen;
     padding: 10px;
+    
 }
 footer {
     grid-area: footer;
@@ -40,4 +40,10 @@ footer {
 }
 li {
     list-style-type: none;
+}
+.form-check-label {
+    padding: 10px 20px;
+}
+p {
+    margin: 10px 0px 0px 0px;
 }
