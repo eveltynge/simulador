@@ -1,12 +1,15 @@
 const solicitantes = [];
-let condicion = true;
 
 class Solicitud {
-    constructor(nombre, montos, meses){
+    constructor(nombre, apellido, monto, meses){
         this.nombre=nombre,
-        this.montos=montos,
+        this.apellido=apellido,
+        this.monto=monto;
         this.meses=meses;
-        switch (this.meses) {
+        this.montoTotal = 0;
+        this.cuota = 0;
+        this.interes = 0;
+        switch (this.meses){
             case 12:
                 this.interes = 0.20;
                 break;
@@ -19,7 +22,7 @@ class Solicitud {
         }
     }
     montoFinal(){
-        this.montoTotal = this.montos + this.montos*this.interes;
+        this.montoTotal = this.monto + this.monto*this.interes;
         return this.montoTotal;
     }
     cuotaFinal(){
@@ -27,66 +30,39 @@ class Solicitud {
         return this.cuota;
     }
 }
-/* do {
-    let nombre = "";
-    while (nombre == ""){
-        nombre = prompt ("Por favor ingrese su nombre");
-    }
-    alert ("Hola " + nombre + ". " + "Bienvenido a tu simulador de préstamos");
-
-    let montos = 0;
-    do {
-        montos = (parseInt(prompt("Ingrese un monto mayor a 0 para simular su préstamo")));
-    } while (montos <= 0);
-
-    let meses = 0;
-    do {
-        meses = (parseInt(prompt("Seleccione entre 12, 24 o 36 meses")));
-    } while ((meses != 12) && (meses != 24) && (meses != 36));
-
-    let SolicitudIngresada = new Solicitud(nombre, montos, meses);
-
-    solicitantes.push(SolicitudIngresada)
-
-    alert ("Ud ingresó " + SolicitudIngresada.montos + " en " + SolicitudIngresada.meses + " meses");
-    alert ("Ud abonará "+ SolicitudIngresada.montoFinal() + " en cuotas de " + SolicitudIngresada.cuotaFinal() + " con un interes de " + SolicitudIngresada.interes);
-
-    condicion = confirm("Quiere simular un nuevo préstamo?")
-
-} while (condicion != false);
-
-console.log(solicitantes); */
-
-const section = document.getElementsByClassName('contenedor');
-
-for (let element of solicitantes){
-
-    let div = document.createElement('div');
-    div.className = 'usuarios'
-    div.innerHTML = `
-    <p>Usuario: ${element.nombre}</p>
-    <p>Monto solicitado: ${element.montos}</p>
-    <p>Cantidad de cuotas: ${element.meses}</p>
-    <p>Monto a pagar: ${element.montoTotal}</p>
-    <p>Monto de la cuota: ${element.cuota}</p>`
-
-    section[0].appendChild(div);
-   
-}
-console.log(section);
 
 let miFormulario = document.getElementById("formulario");
 miFormulario.addEventListener("submit", Simular);
 
-function Simular(e){
-    e.preventDefault();
-    console.log(document.getElementById("mntSlc").value);
-    if(document.getElementById("opciona").checked == true) {   
-        console.log("opciona");   
-    } else if (document.getElementById("opcionb").checked == true){  
-        console.log("opcionb"); 
-    } else if (document.getElementById("opcionc").checked == true) 
-        console.log("opcionc");
-} 
+function Simular(e) {
+    e.preventDefault();    
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let monto = parseInt(document.getElementById("mntSlc").value);
+    let cuotasSelec = document.querySelector('input[name="cuotas"]:checked');
+    let cuota = parseInt(cuotasSelec.value);
+    console.log(cuota);
+    
+    
+    let solicitantes = new Solicitud(nombre, apellido, monto, cuota);
+    solicitantes.montoFinal();
+    solicitantes.cuotaFinal();
+    console.log(solicitantes);
+    console.log(solicitantes.interes);
 
 
+    const section = document.querySelector('.contenedor');
+    const div = document.createElement('div');
+    div.className = 'usuarios';
+    div.innerHTML = `
+    <div><p>Usuario: ${solicitantes.nombre} ${solicitantes.apellido}</p>
+    <p>Monto Solicitado: ${solicitantes.monto}</p>
+    <p>Cuota: ${solicitantes.cuota} </p>
+    <p>Monto a devolver: ${solicitantes.montoTotal} </p>
+    <p>Valor cuota: ${solicitantes.cuota} </p></div>`;
+
+    section.appendChild(div);
+
+const guardados = JSON.stringify(solicitantes);
+localStorage.setItem("solicitantes", guardados);
+}
