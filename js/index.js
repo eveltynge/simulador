@@ -59,7 +59,8 @@ function Simular(e) {
     <p>Monto Solicitado: ${solicitantes.monto}</p>
     <p>Cuota: ${solicitantes.meses} </p>
     <p>Monto a devolver: ${solicitantes.montoTotal} </p>
-    <p>Valor cuota: ${solicitantes.cuota.toFixed(2)} </p></div>`;
+    <p>Valor cuota: ${solicitantes.cuota.toFixed(2)} </p>
+    </div>`;
 
     section.appendChild(div);
 
