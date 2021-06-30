@@ -39,12 +39,12 @@ function Simular(e) {
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;
     let monto = parseInt(document.getElementById("mntSlc").value);
-    let cuotasSelec = document.querySelector('input[name="cuotas"]:checked');
-    let cuota = parseInt(cuotasSelec.value);
-    console.log(cuota);
+    let mesesSelec = document.querySelector('input[name="cuotas"]:checked');
+    let meses = parseInt(mesesSelec.value);
+    console.log(meses);
     
     
-    let solicitantes = new Solicitud(nombre, apellido, monto, cuota);
+    let solicitantes = new Solicitud(nombre, apellido, monto, meses);
     solicitantes.montoFinal();
     solicitantes.cuotaFinal();
     console.log(solicitantes);
@@ -57,9 +57,9 @@ function Simular(e) {
     div.innerHTML = `
     <div><p>Usuario: ${solicitantes.nombre} ${solicitantes.apellido}</p>
     <p>Monto Solicitado: ${solicitantes.monto}</p>
-    <p>Cuota: ${solicitantes.cuota} </p>
+    <p>Cuota: ${solicitantes.meses} </p>
     <p>Monto a devolver: ${solicitantes.montoTotal} </p>
-    <p>Valor cuota: ${solicitantes.cuota} </p></div>`;
+    <p>Valor cuota: ${solicitantes.cuota.toFixed(2)} </p></div>`;
 
     section.appendChild(div);
 
