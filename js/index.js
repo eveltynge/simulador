@@ -47,7 +47,7 @@ $('#btn').on('click', function Simular(e) {
     console.log(solicitantes);
     
     $('.contenedor').append(`
-    <div><p>Usuario: ${solicitantesObj.nombre} ${solicitantesObj.apellido}</p>
+    <div class="contenedor border border-success" style="padding: 3px"><p>Usuario: ${solicitantesObj.nombre} ${solicitantesObj.apellido}</p>
     <p>Monto Solicitado: ${solicitantesObj.monto}</p>
     <p>Cuota: ${solicitantesObj.meses} </p>
     <p>Monto a devolver: ${solicitantesObj.montoTotal} </p>
@@ -60,17 +60,13 @@ localStorage.setItem("solicitantes", guardados);
 
 solicitantes.forEach(solicitante => {
     removeAllChildNodes(div);
-    const section = document.querySelector('.contenedor');
-    div.className = 'usuarios';
-    div.innerHTML = `
+    $('.contenedor').append(`
     <div><p>Usuario: ${solicitante.nombre} ${solicitante.apellido}</p>
     <p>Monto Solicitado: ${solicitante.monto}</p>
     <p>Cuota: ${solicitante.meses} </p>
     <p>Monto a devolver: ${solicitante.montoTotal} </p>
     <p>Valor cuota: ${solicitante.cuota.toFixed(2)} </p>
-    --------------------------------------------------------
-    </div>`;
-    section.appendChild(div);
+    </div>`)
 })
 
 function removeAllChildNodes(parent) {
