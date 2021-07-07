@@ -31,39 +31,52 @@ class Solicitud {
     }
 }
 
-let miFormulario = document.getElementById("formulario");
-miFormulario.addEventListener("submit", Simular);
-
-function Simular(e) {
+$('section').prepend('<button id="btn" type="submit" class="btn btn-success" value="Simular">Simular</button>');
+$('#btn').on('click', function Simular(e) {
     e.preventDefault();    
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;
     let monto = parseInt(document.getElementById("mntSlc").value);
     let mesesSelec = document.querySelector('input[name="cuotas"]:checked');
     let meses = parseInt(mesesSelec.value);
-    console.log(meses);
-    
-    
-    let solicitantes = new Solicitud(nombre, apellido, monto, meses);
-    solicitantes.montoFinal();
-    solicitantes.cuotaFinal();
+        
+    let solicitantesObj = new Solicitud(nombre, apellido, monto, meses);
+    solicitantesObj.montoFinal();
+    solicitantesObj.cuotaFinal();
+    solicitantes.push(solicitantesObj);
     console.log(solicitantes);
-    console.log(solicitantes.interes);
-
-
-    const section = document.querySelector('.contenedor');
-    const div = document.createElement('div');
-    div.className = 'usuarios';
-    div.innerHTML = `
-    <div><p>Usuario: ${solicitantes.nombre} ${solicitantes.apellido}</p>
-    <p>Monto Solicitado: ${solicitantes.monto}</p>
-    <p>Cuota: ${solicitantes.meses} </p>
-    <p>Monto a devolver: ${solicitantes.montoTotal} </p>
-    <p>Valor cuota: ${solicitantes.cuota.toFixed(2)} </p>
-    </div>`;
-
-    section.appendChild(div);
-
+    
+    $('.contenedor').append(`
+    <div><p>Usuario: ${solicitantesObj.nombre} ${solicitantesObj.apellido}</p>
+    <p>Monto Solicitado: ${solicitantesObj.monto}</p>
+    <p>Cuota: ${solicitantesObj.meses} </p>
+    <p>Monto a devolver: ${solicitantesObj.montoTotal} </p>
+    <p>Valor cuota: ${solicitantesObj.cuota.toFixed(2)} </p>
+    </div>`)
+    
 const guardados = JSON.stringify(solicitantes);
 localStorage.setItem("solicitantes", guardados);
+});
+
+solicitantes.forEach(solicitante => {
+    removeAllChildNodes(div);
+    const section = document.querySelector('.contenedor');
+    div.className = 'usuarios';
+    div.innerHTML = `
+    <div><p>Usuario: ${solicitante.nombre} ${solicitante.apellido}</p>
+    <p>Monto Solicitado: ${solicitante.monto}</p>
+    <p>Cuota: ${solicitante.meses} </p>
+    <p>Monto a devolver: ${solicitante.montoTotal} </p>
+    <p>Valor cuota: ${solicitante.cuota.toFixed(2)} </p>
+    --------------------------------------------------------
+    </div>`;
+    section.appendChild(div);
+})
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
+const guardados = JSON.stringify(solicitantes);
+localStorage.setItem("solicitantes", guardados);
