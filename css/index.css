@@ -1,33 +1,23 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-html {
-    height: 100%;
-}
+*{
+    margin:0%;
+    Padding:0%;}
 body {
     height: 100%;
-    margin: 0 !important;
-    padding: 0 !important;    
+    width: 100%;   
 }
-.container {
-    display: grid;
-    grid-template:
-    "foto main" auto
-    "footer footer" 70px /
-    40% 60%;
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.padding {
+    padding: 0 !important;
 }
 .foto {
-    grid-area: foto;
     background-color: rgb(152, 251, 152);
 }
-.main {
-    grid-area: main;    
-    padding: 10px;    
-}
-footer {
-    grid-area: footer;
+.main {  
+    padding: 10px;  
+    background-color: white;  
 }
 .calculator {
     display: flex;

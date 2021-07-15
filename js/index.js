@@ -72,7 +72,7 @@ localStorage.setItem("solicitantes", guardados);
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 $('.contenedorSolicitantes').after('<button id="btnDatos" type="submit" class="btn btn-success" value="Simular" style="margin:10px">Guardar Solicitud</button>');
-$("#btnDatos").click(() => { 
+$("#btnDatos").click(() => {    
     $.post(url, solicitantes,(respuesta, estado) => {
         if(estado === "success"){
             $('.btnForm').after(`<div>
@@ -80,4 +80,10 @@ $("#btnDatos").click(() => {
             </div>`);
         }  
     });
+    
 });
+$('.hide').after('<button id="btn1" class="btn btn-success">Informacion de usuarios</button>')
+$('#btn1').click(()=> {
+    $('.hide').toggle('slow');
+})
+
