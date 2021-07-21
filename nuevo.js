@@ -33,12 +33,12 @@ $('#btn').on('click', function Simular(e){
   e.preventDefault(); 
   let nombre = document.getElementById("nombre").value;
   let apellido = document.getElementById("apellido").value;
-  let monto = parseInt(document.getElementById("mntSlc").value);
-  let mesesSelec = document.querySelector('option[name="cuotas"]:checked');
-  let meses = parseInt(mesesSelec.value);
   let dni = document.getElementById("dni").value;
   let mail = document.getElementById("mail").value;
   let situacion = document.querySelector('option[name="situacion"]:checked');
+  let monto = parseInt(document.getElementById("mntSlc").value);
+  let mesesSelec = document.querySelector('option[name="cuotas"]:checked');
+  let meses = parseInt(mesesSelec.value);
 
   let prestamoObj = new Prestamo(nombre, apellido, monto, meses, dni, mail, situacion);
   prestamoObj.pagarFinal();
