@@ -1,10 +1,25 @@
-*{
+/* Parece mas chico pero no hay scroll horizontal *{
     margin:0;
     padding:0;
 }
 body {
     height: 100%;
     width: 100%;   
+} */
+/* Copiado de MP */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+.container > * {
+    padding: 10px;
 }
 .foto {
     background-color: rgb(187, 242, 187);
@@ -16,15 +31,32 @@ body {
 .calculator {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+}
+.enlace {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 20px;
 }
 li {
-    list-style-type: none;
+    list-style: none;    
 }
-.form-check-label {
-    padding: 10px 20px;
+li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-p {
+a:hover {
+    text-shadow: 2px 2px 4px gray;
+    color: black;
+}
+.mp {
+    font-family: 'Mate SC', serif;
+    text-transform: none;
+    font-weight: bold;
+}
+#ingreso {
     margin: 10px 0px 0px 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
