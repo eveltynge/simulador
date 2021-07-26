@@ -1,14 +1,4 @@
-/* Parece mas chico pero no hay scroll horizontal *{
-    margin:0;
-    padding:0;
-}
-body {
-    height: 100%;
-    width: 100%;   
-} */
-/* Copiado de MP */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -16,7 +6,8 @@ html {
     height: 100%;
 }
 body {
-    min-height: 100%;
+    height: 100%;
+    width: 100%;
 }
 .container > * {
     padding: 10px;
@@ -24,9 +15,10 @@ body {
 .foto {
     background-color: rgb(187, 242, 187);
 }
-.principal {  
+.principal { 
     padding: 10px;  
-    background-color: white;  
+    background-color: white; 
+    height: auto; 
 }
 .calculator {
     display: flex;

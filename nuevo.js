@@ -1,24 +1,44 @@
 const tasa = 0.0125;
 const iva = 0.21;
+let nroId = 0;
 
 const solicitantes = [];
 
 class Prestamo {
-    constructor (nombre, apellido, monto, plazo, dni, mail){
+    constructor (nombre, apellido, monto, plazo, dni, mail, nroId, situacion){
         this.nombre=nombre,
         this.apellido=apellido,
         this.monto=monto,
         this.plazo=plazo,
         this.dni=dni,
         this.mail=mail,
-        this.id = 1;
+        this.nroId = nroId;
+        switch (this.situacion){
+          case "empleado":
+            this.situasion = aprobado;
+          case "publico":
+            this.situacion = aprobado;
+          case "monotributo":
+            this.situacion = aprobado;
+          case "independiente":
+            this.situacion = pendiente;
+          case "jubilado":
+            this.situacion = pendiente;
+          case "autonomo": 
+            this.situacion = pendiente;
+          case "desempleado":
+            this.situacion = rechazado;
+          case "otro":
+            this.situacion = pendiente;
+        }
         this.pagar = 0;
         this.cuotaUno = 0;
     }
-    nroId(){
-      this.id = this.id + 1;
-      return this.id;
-    }
+   /*  nroId(){
+      //this.nroId = this.nroId + 1;
+      this.nroId = (this.nroId || 0) + 1;
+      return this.nroId;
+    } */
     pagarFinal(){
         this.pagar = this.monto + this.monto * iva + this.monto * tasa;
         return this.pagar;
@@ -39,46 +59,48 @@ $('#btn').on('click', function Simular(e){
   let monto = parseInt(document.getElementById("mntSlc").value);
   let mesesSelec = document.querySelector('option[name="cuotas"]:checked');
   let meses = parseInt(mesesSelec.value);
+  nroId = nroId + 1;
 
-  let prestamoObj = new Prestamo(nombre, apellido, monto, meses, dni, mail, situacion);
-  prestamoObj.pagarFinal();
-  prestamoObj.cuotaInicial();
-  solicitantes.push(prestamoObj);
-  console.log(solicitantes);
-
-  const url = "https://jsonplaceholder.typicode.com/posts";
+  let prestamoObj = new Prestamo(nombre, apellido, monto, meses, dni, mail, nroId, situacion);
+  /* prestamoObj.pagarFinal();
+  prestamoObj.cuotaInicial(); */ 
 
   $('.modal-body').append(`
     <div id="datos" class="modal-body">
-        ${$.post(url, solicitantes,(respuesta, estado) => {
-          if(estado === "success") {
-            $('#datos').append(`<div>
-            <p>${prestamoObj.nombre} ${prestamoObj.apellido}</p>
-            <p>Su nro de solicitud es: ${respuesta.id}</p>
-            Nos comunicaremos con Ud dentro de los proximos 5 dias habiles.</div>`)
-          }
-      })}                
+      <div>
+          <p>${prestamoObj.nombre} ${prestamoObj.apellido}</p>
+          <p>Su nro de solicitud es: ${prestamoObj.nroId}</p>
+          Nos comunicaremos con Ud dentro de los proximos 5 dias habiles.
+      </div>              
     </div>`)
 
-const guardados = JSON.stringify(solicitantes);
-localStorage.setItem("solicitantes", guardados);
+  solicitantes.push(prestamoObj);
+  //console.log(solicitantes);
 });
-
 //ESTO FUNCIONA OK!!!
 $('.btnDatos').click(function(){
   $('.modal-body').empty();
 })
-//Por que necesito que este dos veces??
-const guardados = JSON.stringify(solicitantes);
-localStorage.setItem("solicitantes", guardados);
-//Borra Todo otra vez
-$('#btnC').click(function(){
-  localStorage.removeItem("solicitantes", guardados);
+
+//GUARDAR
+$('#btnG').click(function(){    
+  const guardados = JSON.stringify(solicitantes);
+  localStorage.setItem("solicitantes", guardados);
+  
+//RECUPERAR OBJETO DEL STORAGE
+$('#btn1').click(function(){
+  $('.buscador').append(`
+  ${JSON.parse(localStorage.getItem("solicitantes"))}  //me guarda [object Object]
+  `)})
+
 })
 
-//GUARDAR INFO SOLICITANTES AL APRETAR BOTON GUARDAR
-/* const guardados = JSON.stringify(solicitantes);
-console.log(guardados);
-$('#btnG').click(function(){
-  localStorage.setItem("solicitantes", guardados)
-}) */
+
+//BORRAR ULTIMO
+$('#btnC').click(function(){
+  solicitantes.pop(nroId-1);
+})
+
+///////////////////////////////
+
+

@@ -20,134 +20,136 @@
     </div>    
 </section>    
 <main class="principal col-6">
+  <form action="" method="POST">
     <div class="calculator row">
-        <div class="col-12">
-            <ul class="enlace">                
-                <li class="col-2"><a href="index.html">Inicio</a></li>
-                <li class="col-2"><a href="search.html">Solicitudes</a></li>
-            </ul>
+      <div class="col-12">
+        <ul class="enlace">
+          <li class="col-2"><a href="index.html">Inicio</a></li>
+          <li class="col-2"><a href="search.html">Solicitudes</a></li>
+        </ul>
+      </div>
+      <div class="usuarios col-12">
+        <div id="saludo">
+          <h1>Encontrá ofertas de préstamos</h1>
+          <p id="ingreso">Ingresa tus datos y el monto que necesitas.</p>
         </div>
-        <div class="usuarios col-12">
-            <div id="saludo">
-                <h1>Encontrá ofertas de préstamos</h1>
-                <p id="ingreso">Ingresa tus datos y el monto que necesitas.</p>
-            </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+          </div>
+          <input type="text" id="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
-        <div class="usuarios col-6"> 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
-                </div>
-                <input type="text" id="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-            </div>
-        </div>                    
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
-                </div>
-                <input type="text" id="apellido" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-            </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+          </div>
+          <input type="text" id="apellido" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">DNI</span>
-                </div>
-                <input type="number" id="dni" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-            </div>
-        </div> 
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <!-- <span class="input-group-text" id="inputGroup-sizing-default">Fecha de Nacimiento</span> -->
-                </div>
-                <input type="date" id="ncmt" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-            </div>
-        </div>          
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01" required>Situación actual</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option name="situacion" value="empleado">Empleado</option>
-                    <option name="situacion" value="publico">Empleado Público</option>
-                    <option name="situacion" value="monotributo">Monotributista</option>
-                    <option name="situacion" value="independiente">Trabajador Independiente</option>
-                    <option name="situacion" value="jubilado">Jubilado</option>
-                    <option name="situacion" value="autonomo">Autónomo</option>
-                    <option name="situacion" value="desempleado">Desempleado</option>
-                    <option name="situacion" value="otro">Otro</option>
-                </select>
-              </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">DNI</span>
+          </div>
+          <input type="number" id="dni" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <input type="text" id="mail" class="form-control" placeholder="Usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
-                <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
-                </div>
-              </div>
-        </div>           
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Monto</span>
-                </div>
-                <input type="number" id="mntSlc" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-            </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <!-- <span class="input-group-text" id="inputGroup-sizing-default">Fecha de Nacimiento</span> -->
+          </div>
+          <input type="date" id="ncmt" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
-        <div class="usuarios col-6">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01" id="opcMes" required>Meses</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option name="cuotas" value="12">12</option>
-                    <option name="cuotas" value="18">18</option>
-                    <option name="cuotas" value="24">24</option>
-                    <option name="cuotas" value="30">30</option>
-                    <option name="cuotas" value="36">36</option>
-                    <option name="cuotas" value="42">42</option>
-                    <option name="cuotas" value="48">48</option>
-                </select>
-            </div>
-        
-    </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect02">Situación actual</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect02">
+              <option name="situacion" value="empleado">Empleado</option>
+              <option name="situacion" value="publico">Empleado Público</option>
+              <option name="situacion" value="monotributo">Monotributista</option>
+              <option name="situacion" value="independiente">Trabajador Independiente</option>
+              <option name="situacion" value="jubilado">Jubilado</option>
+              <option name="situacion" value="autonomo">Autónomo</option>
+              <option name="situacion" value="desempleado">Desempleado</option>
+              <option name="situacion" value="otro">Otro</option>
+          </select>
+          </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <input type="text" id="mail" class="form-control" placeholder="Usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
+          </div>
+          </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Monto</span>
+          </div>
+          <input type="number" id="mntSlc" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+      </div>
+      <div class="form-group usuarios col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01" id="opcMes">Meses</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+              <option name="cuotas" value="12">12</option>
+              <option name="cuotas" value="18">18</option>
+              <option name="cuotas" value="24">24</option>
+              <option name="cuotas" value="30">30</option>
+              <option name="cuotas" value="36">36</option>
+              <option name="cuotas" value="42">42</option>
+              <option name="cuotas" value="48">48</option>
+          </select>
+        </div>
+      </div>
     <div class="row">
-        <button id="btn" type="button" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-success col" value="Simular" style="margin: 15px 0px;">Simular</button>
-    </div>  
-   
-  <div class="modalbox">
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Solicitud de préstamo</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div id="datos" class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" id="btnC" class="btnDatos btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" id="btnG" class="btnDatos btn btn-primary" data-dismiss="modal">Guardar</button>
+      <input type="submit" id="btn"  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-success col" value="Solicitar" style="margin: 15px 0px;">
+    </div>
+      <div class="modalbox">
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Solicitud de préstamo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div id="datos" class="modal-body"></div>
+              <div class="modal-footer">
+                  <button type="button" id="btnC" class="btnDatos btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="button" id="btnG" class="btnDatos btn btn-primary" data-dismiss="modal">Confirmar</button>
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
+  </form>
+  <div class="buscador">
+    <button id="btn1">buscador</button>
   </div>
-
-</div>
 </main>
 <footer class="col-12">
-    <div>
-        <ul class="enlace row">
-            <li class="col-3">Bariloche, Río Negro - Argentina</li>
-            <li class="col-3">made by <span class="mp">Moncholeus Project</span></li>
-        </ul>
-    </div>
+  <div>
+    <ul class="enlace row">
+      <li class="col-3">Bariloche, Río Negro - Argentina</li>
+      <li class="col-3">made by <span class="mp">Moncholeus Project</span></li>
+    </ul>
+  </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- <script src="js/index.js"></script> -->
