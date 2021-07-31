@@ -20,7 +20,7 @@
     </div>    
 </section>    
 <main class="principal col-6">
-  <form action="" method="POST">
+  <form action="">
     <div class="calculator row">
       <div class="col-12">
         <ul class="enlace">
@@ -56,14 +56,6 @@
             <span class="input-group-text" id="inputGroup-sizing-default">DNI</span>
           </div>
           <input type="number" id="dni" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-        </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <!-- <span class="input-group-text" id="inputGroup-sizing-default">Fecha de Nacimiento</span> -->
-          </div>
-          <input type="date" id="ncmt" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
       </div>
       <div class="form-group usuarios col-6">
@@ -115,8 +107,8 @@
           </select>
         </div>
       </div>
-    <div class="row">
-      <input type="submit" id="btn"  data-toggle="modal" data-target="#staticBackdrop" class="btn btn-success col" value="Solicitar" style="margin: 15px 0px;">
+    <div class="form-group usuarios col-6">
+      <input type="submit" id="btn" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-success col" value="Solicitar">
     </div>
       <div class="modalbox">
         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -130,18 +122,47 @@
               </div>
               <div id="datos" class="modal-body"></div>
               <div class="modal-footer">
-                  <button type="button" id="btnC" class="btnDatos btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" id="btnG" class="btnDatos btn btn-primary" data-dismiss="modal">Confirmar</button>
+                  <input type="reset" id="btnC" class="btn btn-secondary btnDatos" data-dismiss="modal"></input>
+                  <input type="submit" id="btnG" class="btn btn-primary btnDatos" data-dismiss="modal"></inpu>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </form>
-  <div class="buscador">
-    <button id="btn1">buscador</button>
+    <!-- Button trigger modal Buscador -->
+    <input type="number" id="busqueda" placeholder="Busqueda por ID">
+<button type="button" id="btnModal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  buscar
+</button>
+
+<!-- Modal Buscador-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="bsqMdl" class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
+</div>
+<!-- Version antes de prueba de modal -->
+    <!-- <div class="buscador row"> 
+      <div class="col"><input type="number" id="busca" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Buscar por ID o DNI" required></div>
+      <div class="col"><input type="submit" name="" id="btn1"></div>
+      <div class="col"><button type="submit" id="btn1" class="btn btn-outline-success">Buscador</button></div>
+    </div> -->
+  </form>
 </main>
 <footer class="col-12">
   <div>

@@ -1,0 +1,20 @@
+[
+    {
+    "apellido": "GARCIA ESPINO",
+    "cuotaUno": 2037.5,
+    "monto": 20000,
+    "nombre": "EVELYN",
+    "nroId": 1,
+    "pagar": 24450,
+    "plazo": 12
+    },
+    {
+        "apellido": "Perez",
+        "cuotaUno": 2037.5,
+        "monto": 20000,
+        "nombre": "EVELYN",
+        "nroId": 1,
+        "pagar": 24450,
+        "plazo": 12  
+    }
+]
