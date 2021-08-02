@@ -50,6 +50,13 @@ a:hover {
     text-shadow: 2px 2px 4px gray;
     color: black;
 }
+.navbar {
+    padding: 0%;
+    margin: 0%;
+}
+.nav-item {
+    font-size: 18px;
+}
 .mp {
     font-family: 'Mate SC', serif;
     text-transform: none;
