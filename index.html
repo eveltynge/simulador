@@ -14,155 +14,136 @@
 <title>TuPrestamo.com</title>
 </head>
 <body class="contenedor row">
-<section class="foto col-6">
+<section class="foto col-5">
     <div>
         <img src="img/presta-logo.jpg" alt="logo tuprestamo.com">
     </div>    
 </section>    
-<main class="principal col-6">
-  <form action="">
-    <div class="calculator row">
-      <div class="col-12">
-        <ul class="enlace">
-          <li class="col-2"><a href="index.html">Inicio</a></li>
-          <li class="col-2"><a href="search.html">Solicitudes</a></li>
-        </ul>
-      </div>
-      <div class="usuarios col-12">
-        <div id="saludo">
-          <h1>Encontrá ofertas de préstamos</h1>
-          <p id="ingreso">Ingresa tus datos y el monto que necesitas.</p>
-        </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
-          </div>
-          <input type="text" id="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-        </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
-          </div>
-          <input type="text" id="apellido" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-        </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">DNI</span>
-          </div>
-          <input type="number" id="dni" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-        </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect02">Situación actual</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect02">
-              <option name="situacion" value="empleado">Empleado</option>
-              <option name="situacion" value="publico">Empleado Público</option>
-              <option name="situacion" value="monotributo">Monotributista</option>
-              <option name="situacion" value="independiente">Trabajador Independiente</option>
-              <option name="situacion" value="jubilado">Jubilado</option>
-              <option name="situacion" value="autonomo">Autónomo</option>
-              <option name="situacion" value="desempleado">Desempleado</option>
-              <option name="situacion" value="otro">Otro</option>
-          </select>
-          </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <input type="text" id="mail" class="form-control" placeholder="Usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
-          </div>
-          </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Monto</span>
-          </div>
-          <input type="number" id="mntSlc" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-        </div>
-      </div>
-      <div class="form-group usuarios col-6">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01" id="opcMes">Meses</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-              <option name="cuotas" value="12">12</option>
-              <option name="cuotas" value="18">18</option>
-              <option name="cuotas" value="24">24</option>
-              <option name="cuotas" value="30">30</option>
-              <option name="cuotas" value="36">36</option>
-              <option name="cuotas" value="42">42</option>
-              <option name="cuotas" value="48">48</option>
-          </select>
-        </div>
-      </div>
-    <div class="form-group usuarios col-6">
-      <input type="submit" id="btn" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-success col" value="Solicitar">
-    </div>
-      <div class="modalbox">
-        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Solicitud de préstamo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div id="datos" class="modal-body"></div>
-              <div class="modal-footer">
-                  <input type="reset" id="btnC" class="btn btn-secondary btnDatos" data-dismiss="modal"></input>
-                  <input type="submit" id="btnG" class="btn btn-primary btnDatos" data-dismiss="modal"></inpu>
-              </div>
+<main class="principal col-7">
+    <form action=""><!-- Form Solcitudes -->
+        <div class="calculator row">
+            <div class="col-12">
+                <ul class="enlace">
+                <li class="col-4"><a href="index.html">Inicio</a></li>
+                <li class="col-4"><a href="search.html">Solicitudes</a></li>
+                <li class="col-4"><a href="history.html">Historial</a></li>
+                </ul>
             </div>
-          </div>
+            <div class="usuarios col-12">
+                <div id="saludo">
+                <h1>Encontrá ofertas de préstamos</h1>
+                <p id="ingreso">Ingresa tus datos y el monto que necesitas.</p>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                </div>
+                <input type="text" id="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
+                </div>
+                <input type="text" id="apellido" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">DNI</span>
+                </div>
+                <input type="number" id="dni" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+                <div class="input-group mb-3">
+                <input type="text" id="mail" class="form-control" placeholder="Usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
+                </div>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Monto</span>
+                </div>
+                <input type="number" id="mntSlc" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01" id="opcMes">Meses</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option name="cuotas" value="12">12</option>
+                    <option name="cuotas" value="18">18</option>
+                    <option name="cuotas" value="24">24</option>
+                    <option name="cuotas" value="30">30</option>
+                    <option name="cuotas" value="36">36</option>
+                    <option name="cuotas" value="42">42</option>
+                    <option name="cuotas" value="48">48</option>
+                </select>
+                </div>
+            </div>
+            <div class="form-group usuarios col-6">
+            <input type="submit" id="btn" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-success" value="Solicitar">
+            </div>
+            <div class="modalbox">
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Solicitud de préstamo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="datos" class="modal-body"></div>
+                    <div class="modal-footer">
+                        <input type="reset" id="btnC" class="btn btn-secondary btnDatos" data-dismiss="modal"></input>
+                        <input type="submit" id="btnG" class="btn btn-primary btnDatos" data-dismiss="modal"></inpu>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- Button trigger modal Buscador -->
-    <input type="number" id="busqueda" placeholder="Busqueda por ID">
-<button type="button" id="btnModal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  buscar
-</button>
-
-<!-- Modal Buscador-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div id="bsqMdl" class="modal-body">
+    </form>        
         
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="calculator row"> <!-- Buscador por nro ID -->
+        <h2>Buscador por nro de ID.</h2>
+        <p>Para realizar una búsqueda detallada por favor ingrese el nro de solicitud que le brindaron.</p>
+        <!-- MODAL -->
+        <!-- Button trigger modal -->
+        <div class="col-6"><input type="number" id="busca" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Buscar por nro de ID" required></div>
+        <div class="col-6"><button type="button" id="btnModal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Buscar</button></div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buscador</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body2">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btnBusca" data-dismiss="modal">Cerrar</button>                
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- Version antes de prueba de modal -->
-    <!-- <div class="buscador row"> 
-      <div class="col"><input type="number" id="busca" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Buscar por ID o DNI" required></div>
-      <div class="col"><input type="submit" name="" id="btn1"></div>
-      <div class="col"><button type="submit" id="btn1" class="btn btn-outline-success">Buscador</button></div>
-    </div> -->
-  </form>
+        
 </main>
 <footer class="col-12">
   <div>
@@ -173,8 +154,8 @@
   </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- <script src="js/index.js"></script> -->
-<script src="nuevo.js"></script>
+<script src="js/index.js"></script>
+<!-- <script src="demo.js"></script> -->
 
 <!-- Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

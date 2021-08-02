@@ -14,11 +14,18 @@ body {
 }
 .foto {
     background-color: rgb(187, 242, 187);
+    padding: 0%;
 }
 .principal { 
     padding: 10px;  
     background-color: white; 
     height: auto; 
+}
+.divPendientes {
+    height: auto;
+} 
+.divHistorico{
+    height: auto;
 }
 .calculator {
     display: flex;
@@ -31,7 +38,7 @@ body {
     margin: 20px 20px;
 }
 li {
-    list-style: none;    
+    list-style: none;
 }
 li a {
     text-decoration: none;
@@ -55,4 +62,23 @@ a:hover {
 }
 #saludo {
     margin-bottom: 20px;
+}
+img {
+    width: 100%;
+}
+#btnPendiente {
+    margin: 50px 0px 0px 0px;
+    display: flex;
+    justify-content: left;
+}
+#btnHistorico {
+    margin: 50px 0px 0px 0px;
+    display: flex;
+    justify-content: left;
+}
+.tabla {
+    width: 100%;
+}
+.tabla2 {
+    width: 100%;
 }
